@@ -1,12 +1,11 @@
-PHP Request Class fuer Uberspace Accounts
+PHP API für Uberspace
 
 Beispiel
 
-	$uberspace = new classUberspaceWebRequest(USERNAME,PASSWORD);
-	$uberspace->request();
-	$uberspace->close();
+	$uberspace = new UberspaceAPI(USERNAME,PASSWORD);
+	$uberspaceData = $uberspace->getData();
 
-	print_r($uberspace->arrValue);
+	print_r($uberspaceData);
 
 	
 Generiert ein Array, mit dem Benutzernamen, der zugeordnete Host, angebundene Web- und MailDomains, dem eingestellten Wunschpreis und dem Guthaben auf dem Account
@@ -14,17 +13,17 @@ Generiert ein Array, mit dem Benutzernamen, der zugeordnete Host, angebundene We
 	Array
 	(
         [username]   =>   USERNAME
-        [wunschpreis]   =>   3.00
-        [guthaben]   =>   2.00
-        [hostname]   =>   HOST.uberspace.de
-        [domains_webserver]   =>   Array
+        [price]   =>   3.00 //wunschpreis
+        [current_amount]   =>   2.00 //guthaben
+        [host]   =>   HOST.uberspace.de
+        [domains_web]   =>   Array
                 (
                         [0]   =>   *.DOMAIN.TLD
                         [1]   =>   DOMAIN.TLD
                         [2]   =>   *.USERNAME.HOST.uberspace.de
                 )
 
-        [domains_mailserver]   =>   Array
+        [domains_mail]   =>   Array
                 (
                         [0]   =>   DOMAIN.TLD
                 )
