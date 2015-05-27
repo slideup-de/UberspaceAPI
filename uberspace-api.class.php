@@ -225,7 +225,7 @@ class UberspaceAPI
     public function personalizeReceipt($receiptid, $billingAddress)
     {
         $this->connect();       
-        $this->execute('https://transaction/'.$receiptid.'/receipt', array(
+        $this->execute('https://uberspace.de/transaction/'.$receiptid.'/receipt', array(
             '_sessionid' => $this->sessionid,
             'recipient'  => $billingAddress,
         ));
